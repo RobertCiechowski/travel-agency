@@ -18,12 +18,12 @@ describe('Component TripSummary', () => {
   });
 
   it('should render proper props: name, cost, days', () => { // Test sprawdzający, czy czy poprawnie renderują się propsy name, cost i days
-    const expectedName = 'nameTest';
-    const expectedCost = '15.00$';
+    const expectedName = 'name Test';
+    const expectedCost = '10';
     const expectedDays = 2;
     const component = shallow(<TripSummary name={expectedName} cost={expectedCost} days={expectedDays} id='' image='' />);
-    expect(component.find('title').text()).toEqual(expectedName);
-    expect(component.find('details').text()).toEqual(`${expectedDays} days from ${expectedCost}`);
+    expect(component.find('.title').text()).toEqual(expectedName);
+    expect(component.find('.details').text()).toEqual(`${expectedDays} days from ${expectedCost}`);
   });
 
   it('should throw error without required props', () => { // Test sprawdzający, czy czy jest wywoływany błąd w przypadku braku któregokolwiek z propsów
